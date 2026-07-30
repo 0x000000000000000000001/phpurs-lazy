@@ -15,14 +15,7 @@ class Phpurs_Lazy {
     }
 }
 
-$exports['force'] = function($l) {
-    $__num = \func_num_args();
-    $res = $l(null);
-    if ($__num > 1) {
-        return $res(...\array_slice(\func_get_args(), 1));
-    }
-    return $res;
-};
+$exports['force'] = function($l) { return $l(null); };
 
 $exports['defer'] = function($f) {
     return new Phpurs_Lazy($f);
